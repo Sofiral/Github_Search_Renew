@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Github Search</string>
+    <string name="action_logout">Log out</string>
+    <string name="unauthorized_sign_in">Log in without registration</string>
+    <string name="search_query_hint">Enter the name of the repository</string>
+    <string name="error_auth">Authorization Error</string>
+    <string name="no_results">No results</string>
+    <string name="language">Language: %s</string>
+    <string name="loading">Loading</string>
+    <string name="retry">Retry</string>
+    <string name="bookmark_added">Repository is saved</string>
+    <string name="bookmark_deleted">Repository is deleted</string>
+    <string name="standard_error_msg">Something goes wrong</string>
+
+    <string-array name="tab_names">
+        <item>Search</item>
+        <item>Saved</item>
+    </string-array>
+
+    <string name="no_bookmarks">No saved repositories</string>
+    <string name="delete_all_repos">Delete all</string>
+</resources>

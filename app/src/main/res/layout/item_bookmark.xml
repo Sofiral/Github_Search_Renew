@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background_bookmark_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/image_wrapper"
+        style="@style/DetailsAvatar"
+        android:layout_width="@dimen/details_image_size"
+        android:layout_height="@dimen/details_image_size"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="@dimen/details_image_size"
+            android:layout_height="@dimen/details_image_size"
+            android:layout_gravity="center" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/standard_margin_start"
+        app:layout_constraintStart_toEndOf="@id/image_wrapper"
+        app:layout_constraintTop_toTopOf="@id/image_wrapper"
+        tools:text="Author name" />
+
+    <TextView
+        android:id="@+id/tv_repo_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/cb_bookmark"
+        app:layout_constraintStart_toStartOf="@+id/image_wrapper"
+        app:layout_constraintTop_toBottomOf="@+id/image_wrapper"
+        tools:text="Moxy" />
+
+    <CheckBox
+        android:id="@+id/cb_bookmark"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="10dp"
+        android:checked="true"
+        android:button="@drawable/selector_bookmark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_author"/>
+
+    <TextView
+        android:id="@+id/tv_repo_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/cb_bookmark"
+        app:layout_constraintStart_toStartOf="@+id/image_wrapper"
+        app:layout_constraintTop_toBottomOf="@+id/tv_repo_name"
+        tools:text="Moxy is MVP library for Android with incremental annotation processor and ktx features"/>
+
+    <ImageView
+        android:id="@+id/iv_stars"
+        android:layout_width="16dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_star"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_stars"
+        app:layout_constraintStart_toStartOf="@+id/tv_author"
+        app:layout_constraintTop_toTopOf="@+id/tv_stars" />
+
+    <TextView
+        android:id="@+id/tv_stars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/iv_stars"
+        app:layout_constraintTop_toBottomOf="@+id/tv_author"
+        tools:text="425" />
+
+    <ImageView
+        android:id="@+id/iv_forks"
+        android:layout_width="16dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/ic_fork"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_forks"
+        app:layout_constraintStart_toEndOf="@+id/tv_stars"
+        app:layout_constraintTop_toTopOf="@+id/tv_forks" />
+
+    <TextView
+        android:id="@+id/tv_forks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/iv_forks"
+        app:layout_constraintTop_toTopOf="@+id/tv_stars"
+        tools:text="145" />
+
+    <TextView
+        android:id="@+id/tv_creation_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/cb_bookmark"
+        app:layout_constraintTop_toBottomOf="@+id/tv_repo_description"
+        tools:text="20.02.2022" />
+</androidx.constraintlayout.widget.ConstraintLayout>

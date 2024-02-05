@@ -1,0 +1,11 @@
+<resources>
+    <dimen name="details_image_size">64dp</dimen>
+    <dimen name="details_image_corner_radius">32dp</dimen>
+
+    <dimen name="bookmark_star_size">40dp</dimen>
+
+    <dimen name="standard_margin_start">16dp</dimen>
+    <dimen name="standard_margin_end">16dp</dimen>
+    <dimen name="standard_margin_bottom">16dp</dimen>
+    <dimen name="standard_margin_top">16dp</dimen>
+</resources>

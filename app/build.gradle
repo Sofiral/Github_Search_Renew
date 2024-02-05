@@ -1,0 +1,112 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.sofiral.github_search_renew'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.sofiral.github_search_renew"
+        minSdk 26
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'androidx.preference:preference:1.2.1'
+
+    // Moxy
+    def moxy_version = "2.2.2"
+    implementation "com.github.moxy-community:moxy:$moxy_version"
+    implementation "com.github.moxy-community:moxy-androidx:$moxy_version"
+    kapt "com.github.moxy-community:moxy-compiler:$moxy_version"
+
+    // Cicerone
+    implementation "com.github.terrakok:cicerone:7.1"
+
+    // ToothPick
+    def toothpick_version = "3.1.0"
+    implementation "com.github.stephanenicolas.toothpick:smoothie-lifecycle-ktp:$toothpick_version"
+    implementation "com.github.stephanenicolas.toothpick:toothpick-runtime:$toothpick_version"
+    implementation "com.github.stephanenicolas.toothpick:smoothie-androidx:$toothpick_version"
+    implementation "com.github.stephanenicolas.toothpick:ktp:$toothpick_version"
+    kapt "com.github.stephanenicolas.toothpick:toothpick-compiler:$toothpick_version"
+
+    // RxJava
+    implementation 'io.reactivex.rxjava3:rxjava:3.1.4'
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+
+    // Retrofit
+    def retrofit_version = "2.9.0"
+    implementation "com.squareup.okhttp3:okhttp:4.9.0"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava3:$retrofit_version"
+
+    // Room
+    def room_version = "2.4.2"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    implementation "androidx.room:room-rxjava3:$room_version"
+
+    // Paging
+    def paging_version = "3.1.1"
+    implementation "androidx.paging:paging-runtime:$paging_version"
+    implementation "androidx.paging:paging-rxjava3:$paging_version"
+
+    // Google sign-in
+    implementation 'com.google.android.gms:play-services-auth:20.7.0'
+
+    def auto_dispose_version = "2.1.1"
+    implementation "com.uber.autodispose2:autodispose:$auto_dispose_version"
+    implementation "com.uber.autodispose2:autodispose:$auto_dispose_version"
+    implementation "com.uber.autodispose2:autodispose-android:$auto_dispose_version"
+    implementation "com.uber.autodispose2:autodispose-androidx-lifecycle:$auto_dispose_version"
+
+    // Glide
+    def glide_version = '4.12.0'
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+
+    // Timber
+    implementation 'com.jakewharton.timber:timber:5.0.1'
+
+    //ViewBindDelegate
+    def delegation_version = '1.5.3'
+    api "com.github.kirich1409:viewbindingpropertydelegate:$delegation_version"
+    api "com.github.kirich1409:viewbindingpropertydelegate-noreflection:$delegation_version"
+}
