@@ -34,6 +34,7 @@ class DetailFragment : CoreFragment(), DetailView {
                     .toInstance(requireArguments().getSerializable(ARGUMENTS_KEY) as? DetailFragmentArgs)
             }
             .getInstance(DetailPresenter::class.java)
+            .also { Toothpick.closeScope(scopeName) }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -76,7 +77,7 @@ class DetailFragment : CoreFragment(), DetailView {
         private const val ARGUMENTS_KEY = "ARGUMENTS_KEY"
 
         fun newInstance(args: DetailFragmentArgs) = DetailFragment().apply {
-            arguments = Bundle(1).apply {
+            arguments = Bundle().apply {
                 putSerializable(ARGUMENTS_KEY, args)
             }
         }

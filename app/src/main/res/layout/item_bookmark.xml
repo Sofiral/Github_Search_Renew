@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/background_bookmark_item"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_bookmark_item">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/image_wrapper"
         style="@style/DetailsAvatar"
         android:layout_width="@dimen/details_image_size"
         android:layout_height="@dimen/details_image_size"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="@dimen/standard_margin_start"
+        android:layout_marginTop="@dimen/standard_margin_top"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -50,11 +49,11 @@
         android:id="@+id/cb_bookmark"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="10dp"
-        android:checked="true"
+        android:layout_marginEnd="@dimen/standard_margin_end"
         android:button="@drawable/selector_bookmark"
+        android:checked="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_author"/>
+        app:layout_constraintTop_toTopOf="@+id/tv_author" />
 
     <TextView
         android:id="@+id/tv_repo_description"
@@ -64,7 +63,7 @@
         app:layout_constraintEnd_toEndOf="@+id/cb_bookmark"
         app:layout_constraintStart_toStartOf="@+id/image_wrapper"
         app:layout_constraintTop_toBottomOf="@+id/tv_repo_name"
-        tools:text="Moxy is MVP library for Android with incremental annotation processor and ktx features"/>
+        tools:text="Moxy is MVP library for Android with incremental annotation processor and ktx features" />
 
     <ImageView
         android:id="@+id/iv_stars"
@@ -107,6 +106,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:layout_marginBottom="@dimen/standard_margin_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/cb_bookmark"
         app:layout_constraintTop_toBottomOf="@+id/tv_repo_description"
         tools:text="20.02.2022" />
